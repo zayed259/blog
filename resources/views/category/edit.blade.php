@@ -3,24 +3,50 @@
 @section('pagetitle')
     Update Category
 @endsection
-
 @section('content')
-    <div class="card card-hover shadow mb-4">
-        <div class="card-header py-3 d-flex justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Update Category</h6>
-            <a href="{{url('cat')}}" class="btn btn-primary btn-circle btn-sm" title="Back to Category List">
-                <i class="fas fa-arrow-left"></i>
-            </a>
-        </div>
-        <div class="card-body">
-            {!! Form::model($cat, ['method' => 'put','enctype'=>'multipart/form-data','class'=>'user','route' => ['cat.update', $cat->slug]]) !!}
-            @include('category.form')
-
-            <div class="form-group">
-                {!! Form::submit('Update Category', ['class'=>'btn btn-primary btn-profile btn-block']) !!}
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Edit category</h2>
             </div>
-            {!! Form::close() !!}
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('categories.index') }}"> Back</a>
+            </div>
         </div>
     </div>
+   
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+  
+    <form action="{{ route('categories.update',$category->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+   
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Name:</strong>
+                    <input type="text" name="name" value="{{ $category->name }}" class="form-control" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Detail:</strong>
+                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $category->detail }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+   
+    </form>
 @endsection
-

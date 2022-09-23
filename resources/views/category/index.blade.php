@@ -5,96 +5,52 @@
 @endsection
 
 @section('content')
-<div class="container-fluid p-0">
-    <h1 class="h3 mb-3">Category</h1>
     <div class="row">
-        <div class="col-12">
-            <div class="card">
-                {{-- <div class="card-header">
-                    <h5 class="card-title mb-0">dashboard</h5>
-                </div> --}}
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                @foreach ($allcategory as $category)
-                                <tr>
-                                    <td>{{ $category->id }}</td>
-                                    <td>{{ $category->name }}</td>
-                                    <td class="d-flex justify-content-center">
-                                        {!! Form::open(['method' => 'delete','route' => ['category.destroy', $category->id],'id'=>'deleteform']) !!}
-                                        <a href="javascript:void(0)" class="btn btn-primary btn-circle btn-sm" title="Delete" onclick="event.preventDefault();if (!confirm('Are you sure?')) return; document.getElementById('deleteform').submit();">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                        {!! Form::close() !!}
-                                        <a href="{{url('category/'.$category->id.'/edit')}}" class="btn btn-primary btn-circle btn-sm" title="Edit">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        {{-- <a href="#" class="btn btn-primary btn-circle btn-sm" title="Delete">
-                                            <i class="fas fa-trash"></i>
-                                        </a> --}}
-                                        <a href="{{url('category/'.$category->id)}}" class="btn btn-primary btn-circle btn-sm" title="View">
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Laravel 9 CRUD Example from scratch - ItSolutionStuff.com</h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('categories.create') }}"> Create New Category</a>
             </div>
         </div>
     </div>
-</div>
-{{-- <div class="card mb-4">
-    <!-- Card Header - Dropdown -->
-    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Category List</h6>
-        <div class="dropdown no-arrow">
-            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-v fa-sm fa-fw text-primary"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="{{url('category/create')}}">
-                    <i class="fas fa-plus fa-sm fa-fw mr-2 text-primary"></i>
-                    Add
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{url('export_category_pdf')}}">
-                    <i class="fas fa-file-pdf fa-sm fa-fw mr-2 text-primary"></i>
-                    PDF
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="fas fa-print fa-sm fa-fw mr-2 text-primary"></i>
-                    Print
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="fas fa-file-csv fa-sm fa-fw mr-2 text-primary"></i>
-                    CSV
-                </a>
-            </div>
+   
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
         </div>
-    </div>
-    <!-- Card Body -->
-    <div class="card-body">
-        
-    </div>
-</div> --}}
+    @endif
+   
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Details</th>
+            <th width="280px">Action</th>
+        </tr>
+        @foreach ($categories as $category)
+        <tr>
+            <td>{{ ++$i }}</td>
+            <td>{{ $category->name }}</td>
+            <td>{{ $category->detail }}</td>
+            <td>
+                <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
+   
+                    <a class="btn btn-info" href="{{ route('categories.show',$category->id) }}">Show</a>
+    
+                    <a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">Edit</a>
+   
+                    @csrf
+                    @method('DELETE')
+      
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </table>
+  
+    {!! $categories->links() !!}
+      
 @endsection
