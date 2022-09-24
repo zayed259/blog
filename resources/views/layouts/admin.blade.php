@@ -17,7 +17,9 @@
 	<title>{{ config('app.name', 'Laravel') }} | @yield('pagetitle')</title>
 
 	<link href="{{url('assets/css/app.css')}}" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -34,8 +36,8 @@
 					<li class="sidebar-item {{ Request::is('category') ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{url('category')}}"><i class="align-middle" data-feather="grid"></i><span class="align-middle">Category</span></a>
 					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="#"><i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span></a>
+					<li class="sidebar-item {{ Request::is('tag') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{url('tag')}}"><i class="align-middle" data-feather="at-sign"></i> <span class="align-middle">Tags</span></a>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="#"><i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span></a>
@@ -230,6 +232,7 @@
 	</div>
 
 	<script src="{{url('assets/js/app.js')}}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="{{url('assets/js/jquery-3.6.0.min.js')}}"></script>
 	<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script>

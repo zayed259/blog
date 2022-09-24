@@ -8,43 +8,42 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Laravel 9 CRUD Example from scratch - ItSolutionStuff.com</h2>
+                <h2>Category List</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('categories.create') }}"> Create New Category</a>
+            <div class="pull-right pb-2">
+                <a class="btn btn-success" href="{{ route('category.create') }}"> Create New Category</a>
             </div>
         </div>
     </div>
-   
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
+
+    @include('partial.flash')
+    @include('partial.error')
    
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
+            <th>#</th>
             <th>Name</th>
             <th>Details</th>
             <th width="280px">Action</th>
         </tr>
+        @php
+            $i = 1;
+        @endphp
         @foreach ($categories as $category)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td>{{ $i++ }}</td>
             <td>{{ $category->name }}</td>
             <td>{{ $category->detail }}</td>
             <td>
-                <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
+                <form action="{{ route('category.destroy',$category->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('categories.show',$category->id) }}">Show</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('category.show',$category->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('category.edit',$category->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Delete</button>
                 </form>
             </td>
         </tr>

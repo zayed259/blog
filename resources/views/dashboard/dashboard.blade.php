@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('pagetitle')
-    Capital
+    Dashboard
 @endsection
 @section('content')
 <div class="container-fluid p-0">

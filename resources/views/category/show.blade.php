@@ -1,4 +1,4 @@
-@extends('layouts.light')
+@extends('layouts.admin')
 
 @section('pagetitle')
     Category
@@ -11,7 +11,7 @@
                 <h2> Show Category</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('Categories.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{url('category')}}"> Back</a>
             </div>
         </div>
     </div>
