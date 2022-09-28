@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AllinputController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TagController;
@@ -34,6 +35,9 @@ Route::middleware(['auth'])->group(function () {
 
     // tag
     Route::resource("/tag", TagController::class);
+
+    // all input
+    Route::resource("/allinput", AllinputController::class);
 
 });
 
