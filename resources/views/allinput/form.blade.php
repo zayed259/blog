@@ -5,22 +5,9 @@
     {!! Form::label('title', 'Text:', ['class' => 'form-label']) !!}
     {!! Form::text('title', null, ['required', 'class'=>'form-control', 'id'=>'title', 'placeholder'=>'Title']) !!}
 </div>
-<div class="form-group">
-    {!! Form::label('email', 'Email:', ['class' => 'form-label']) !!}
-    {!! Form::email('email', null, ['required', 'class'=>'form-control', 'id'=>'title', 'placeholder'=>'Email']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('password', 'Password:', ['class' => 'form-label']) !!}
-    {!! Form::password('password', null, ['required', 'class'=>'form-control', 'id'=>'title', 'placeholder'=>'Password']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('task', 'Select:', ['class' => 'form-label']) !!}
-    {!! Form::select('task', ['Task' => 'Task', 'Booking' => 'Booking'], null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('description', 'Textarea', ['class' => 'form-label']) !!}
-    {!! Form::textarea('description', null, ['required', 'class'=>'ckeditor form-control', 'id'=>'description', 'placeholder'=>'Description']) !!} 
-</div>
+
+
+
 <div class="form-group">
     {!! Form::label('checkbox', 'Checkbox: ', ['class' => 'form-label']) !!}
     {!! Form::checkbox('checkbox', 'value', true) !!}
@@ -145,10 +132,7 @@
     {!! Form::label('type', 'Date:', ['class' => 'control-label']) !!}
     {!! Form::date('name', \Carbon\Carbon::now()) !!} 
 </div>
-<div class="form-group">
-    {!! Form::label('type', 'File:', ['class' => 'control-label']) !!}
-    {!! Form::file('icon', ['required', 'class'=>'form-control', 'id'=>'icon']) !!} 
-</div>
+
 <div class="form-group">
     {!! Form::label('type', 'Select Range:', ['class' => 'control-label']) !!}
     {!!  Form::selectRange('number', 10, 20);!!}
