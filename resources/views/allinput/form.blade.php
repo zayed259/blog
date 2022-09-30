@@ -13,7 +13,7 @@
 </div> --}}
 
 
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-6 mb-3 mb-sm-0">
         {!! Form::label('title', 'Text:', ['class' => 'form-label']) !!}
         {!! Form::text('title', null, ['required', 'class'=>'form-control', 'id'=>'title', 'placeholder'=>'Title']) !!}    
@@ -23,7 +23,7 @@
         {!! Form::email('email', null, ['required', 'class'=>'form-control', 'id'=>'email', 'placeholder'=>'Email']) !!}
     </div>
 </div>
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-6 mb-3 mb-sm-0">
         {!! Form::label('tel', 'Tel:', ['class' => 'form-label']) !!}
         {!! Form::tel('tel', null, ['required', 'class'=>'form-control', 'id'=>'tel', 'placeholder'=>'Tel']) !!}  
@@ -33,7 +33,7 @@
         {!! Form::password('password', ['required', 'class'=>'form-control', 'id'=>'password', 'placeholder'=>'Password']) !!}
     </div>
 </div>
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-6 mb-3 mb-sm-0">
         {!! Form::label('image', 'Image:', ['class' => 'form-label']) !!}
         {!! Form::file('image', null, ['required', 'class'=>'form-control', 'id'=>'image', 'placeholder'=>'Image']) !!}   
@@ -44,14 +44,13 @@
     </div>
 </div>
 
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-12 mb-3 mb-sm-0">
-        {!! Form::label('text', 'Textarea:', ['class' => 'form-label']) !!}
-        {!! Form::textarea('description', null, ['required', 'class'=>'form-control form-control-profile', 'id'=>'description', 'placeholder'=>'Description']) !!} 
+        {!! Form::label('description', 'Textarea:', ['class' => 'form-label']) !!}
+        {!! Form::textarea('description', null, ['required', 'class'=>'form-control', 'id'=>'description', 'placeholder'=>'Description']) !!}
     </div>
-    
 </div>
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-4 mb-3 mb-sm-0">
         {!! Form::label('time', 'Time:', ['class' => 'form-label']) !!}
         {!! Form::time('time', null, ['required', 'class'=>'form-control', 'id'=>'time', 'placeholder'=>'Time']) !!}  
@@ -65,7 +64,7 @@
         {!! Form::week('week', null, ['required', 'class'=>'form-control', 'id'=>'week', 'placeholder'=>'Week']) !!}
     </div>
 </div>
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-4 mb-3 mb-sm-0">
         {!! Form::label('month', 'Month:', ['class' => 'form-label']) !!}
         {!! Form::month('month', null, ['required', 'class'=>'form-control', 'id'=>'month', 'placeholder'=>'Month']) !!}
@@ -79,10 +78,10 @@
         {!! Form::datetimeLocal('datetime-local', null, ['required', 'class'=>'form-control', 'id'=>'datetime-local', 'placeholder'=>'Datetime-local']) !!}
     </div>
 </div>
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-12 mt-3 mb-sm-0">
-        {!! Form::label('text', 'Radio Option:', ['class' => 'form-label']) !!}
-    {{ Form::radio('category', 1, true, ['class'=>'form-check-input', 'id' => 'inlineRadio1']) }}
+    <p>Radio Option:</p>
+    {{ Form::radio('category', 1, '', ['class'=>'form-check-input', 'id' => 'inlineRadio1']) }}
     {{ Form::label('inlineRadio1', 'Web Development', ['class' => 'form-check-label']) }}
 
     {{ Form::radio('category', 2, '', ['class'=>'form-check-input', 'id' => 'inlineRadio2']) }}
@@ -93,73 +92,52 @@
 
     {{ Form::radio('category', 4, '', ['class'=>'form-check-input', 'id' => 'inlineRadio4']) }}
     {{ Form::label('inlineRadio4', 'Other', ['class' => 'form-check-label']) }}
-        </div>
+</div>
       
     
 </div>
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-12 mb-3 mb-sm-0">
-    {!! Form::label('select-multiple', 'Select-multiple-checkbox:', ['class' => 'form-label']) !!}
-    {!! Form::checkbox('checkbox', 'value', true) !!}
-    {!! Form::label('checkbox', 'Checkbox: ', ['class' => 'form-label']) !!}
+    <p>Select-multiple-checkbox:</p>
+    {!! Form::checkbox('checkbox', '1', false, ['class'=>'form-check-input', 'id' => 'web']) !!}
+    {!! Form::label('web', 'Web Development', ['class' => 'form-label']) !!}
    
-    {!! Form::checkbox('checkbox', 'value', false) !!}
-    {!! Form::label('checkbox', 'Checkbox: ', ['class' => 'form-label']) !!}
+    {!! Form::checkbox('checkbox', '2', false, ['class'=>'form-check-input', 'id' => 'graphics']) !!}
+    {!! Form::label('graphics', 'Graphics Design', ['class' => 'form-label']) !!}
   
-    {!! Form::checkbox('checkbox', 'value', false) !!}
-    {!! Form::label('checkbox', 'Checkbox: ', ['class' => 'form-label']) !!}
+    {!! Form::checkbox('checkbox', '3', false, ['class'=>'form-check-input', 'id' => 'networking']) !!}
+    {!! Form::label('networking', 'Networking Technology', ['class' => 'form-label']) !!}
     
-    {!! Form::checkbox('checkbox', 'value', false) !!}
-    {!! Form::label('checkbox', 'Checkbox: ', ['class' => 'form-label']) !!}
+    {!! Form::checkbox('checkbox', '4', false, ['class'=>'form-check-input', 'id' => 'java']) !!}
+    {!! Form::label('java', 'Java', ['class' => 'form-label']) !!}
     </div>
   
     
     
 </div>
-<div class="form-group row">
+<div class="form-group row mb-3">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        {!! Form::label('select', 'Select:', ['class' => 'form-label']) !!}
-        {!! Form::select('select', ['1' => 'One', '2' => 'Two', '3' => 'Three'], null, ['required', 'class'=>'form-control', 'id'=>'select', 'placeholder'=>'Select']) !!}   
+        {!! Form::label('color', 'Select:', ['class' => 'form-label']) !!}
+        {!! Form::select('color', ['1' => 'One', '2' => 'Two', '3' => 'Three'], null, ['required', 'class'=>'form-control', 'id'=>'select', 'placeholder'=>'Select']) !!}   
     </div>
-    <div class="col-sm-6 mb-3">
-        {!! Form::label('select-multiple', 'Select-multiple:', ['class' => 'form-label']) !!}
-        {!! Form::select('select-multiple[]', ['1' => 'One', '2' => 'Two', '3' => 'Three'], null, ['required', 'class'=>'form-control', 'id'=>'select-multiple', 'placeholder'=>'Select-multiple', 'multiple']) !!}
+    <div class="col-sm-6">
+        {!! Form::label('tag', 'Select-multiple:', ['class' => 'form-label']) !!}
+        {!! Form::select('tag[]', ['1' => 'One', '2' => 'Two', '3' => 'Three'], null, ['required', 'class'=>'form-control', 'id'=>'select-multiple', 'placeholder'=>'Select-multiple', 'multiple']) !!}
     </div>
 </div>
 
-<div class="form-group row">
-    <div class="col-sm-3 mb-3 mb-sm-0">
+<div class="form-group row mb-3">
+    <div class="col-sm-4 mb-3 mb-sm-0">
         {!! Form::label('number', 'Number:', ['class' => 'form-label']) !!}
         {!! Form::number('number', null, ['required', 'class'=>'form-control', 'id'=>'number', 'placeholder'=>'Number']) !!}
     </div>
-    <div class="col-sm-3 mb-3">
-        {!! Form::label('range', 'Range:', ['class' => 'form-label']) !!}
-        {!! Form::range('range', null, ['required', 'class'=>'form-control', 'id'=>'range', 'placeholder'=>'Range']) !!}
-    </div>
-    <div class="col-sm-3 mb-3">
+    <div class="col-sm-4 mb-3 mb-sm-0">
         {!! Form::label('url', 'Url:', ['class' => 'form-label']) !!}
         {!! Form::url('url', null, ['required', 'class'=>'form-control', 'id'=>'url', 'placeholder'=>'Url']) !!}
     </div>
-    <div class="col-sm-3 mb-3">
-        {!! Form::label('hidden', 'Hidden:', ['class' => 'form-label']) !!}
-        {!! Form::hidden('hidden', null, ['required', 'class'=>'form-control', 'id'=>'hidden', 'placeholder'=>'Hidden']) !!}
-    </div>
-   
-</div>
-<div class="form-group row">
-     
-    <div class="col-sm-4 mb-3 mb-sm-0">
-        {!! Form::label('type', 'Date:', ['class' => 'control-label']) !!}
-        {!! Form::date('name', \Carbon\Carbon::now()) !!}
-    </div>
-
-    <div class="col-sm-4 mb-3 mb-sm-0">
-        {!! Form::label('type', 'Select Range:', ['class' => 'control-label']) !!}
-        {!!  Form::selectRange('number', 10, 20);!!}
-    </div>
-    <div class="col-sm-4 mb-3">
-        {!! Form::label('type', 'Select Month:', ['class' => 'control-label']) !!}
-        {!!  Form::selectMonth('month')!!}
+    <div class="col-sm-4">
+        {!! Form::label('selectmonth', 'Select Month:', ['class' => 'control-label']) !!}
+        {!! Form::selectMonth('selectmonth', null, ['required', 'class'=>'form-control', 'id'=>'month'])!!}
     </div>
 </div>
 
