@@ -1,4 +1,4 @@
-@extends('layouts.light')
+@extends('layouts.admin')
 
 @section('pagetitle')
     Add Product

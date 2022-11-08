@@ -3,6 +3,7 @@
 use App\Http\Controllers\AllinputController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index']);
 
     // category
-    Route::resource("/category", CategoryController::class);
+    Route::resource("/product", ProductController::class);
 
     // tag
     Route::resource("/tag", TagController::class);

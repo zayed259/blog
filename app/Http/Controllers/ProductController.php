@@ -42,7 +42,6 @@ class ProductController extends Controller
     {
         $product = new Product();
         $product->name = $request->name;
-        $product->barcode = $request->barcode;
         $product->feature = $request->feature;
         $product->description = $request->description;
         $product->regular_price = $request->regular_price;
@@ -88,7 +87,6 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, Product $product)
     {
         $product->name = $request->name;
-        $product->barcode = $request->barcode;
         $product->feature = $request->feature;
         $product->description = $request->description;
         $product->regular_price = $request->regular_price;
@@ -108,7 +106,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete();
+        Product::destroy($product->id);
         return redirect()->route("product.index");
     }
 }

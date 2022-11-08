@@ -26,7 +26,6 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'barcode' => 'required|string|max:255',
             'feature' => 'required|string',
             'description' => 'required|string',
             'regular_price' => 'required|numeric',

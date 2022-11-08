@@ -1,4 +1,4 @@
-@extends('layouts.light')
+@extends('layouts.admin')
 
 @section('pagetitle')
     Update Product
@@ -13,7 +13,7 @@
             </a>
         </div>
         <div class="card-body">
-            {!! Form::model($product, ['method' => 'put','enctype'=>'multipart/form-data','class'=>'user','route' => ['product.update', $product->slug]]) !!}
+            {!! Form::model($product, ['method' => 'put','enctype'=>'multipart/form-data','class'=>'user','route' => ['product.update', $product->id]]) !!}
             @include('product.form')
 
             <div class="form-group">

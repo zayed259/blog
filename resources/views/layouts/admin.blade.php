@@ -33,8 +33,8 @@
 					<li class="sidebar-item {{ Request::is('dashboard') ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{url('dashboard')}}"><i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span></a>
 					</li>
-					<li class="sidebar-item {{ Request::is('category') ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{url('category')}}"><i class="align-middle" data-feather="grid"></i><span class="align-middle">Category</span></a>
+					<li class="sidebar-item {{ Request::is('product') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{url('product')}}"><i class="align-middle" data-feather="grid"></i><span class="align-middle">Product</span></a>
 					</li>
 					<li class="sidebar-item {{ Request::is('tag') ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{url('tag')}}"><i class="align-middle" data-feather="at-sign"></i> <span class="align-middle">Tags</span></a>
