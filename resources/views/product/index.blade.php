@@ -66,8 +66,17 @@
                             <a href="{{url('product/'.$product->id.'/edit')}}" class="btn btn-primary btn-circle btn-sm">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a href="{{url('product/'.$product->id.'/delete')}}" class="btn btn-danger btn-circle btn-sm">
-                                <i class="fas fa-trash"></i>
+                            {{-- delete --}}
+                            <form action="{{url('product/'.$product->id)}}" method="post" class="d-inline">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger btn-circle btn-sm" onclick="return confirm('Are you sure to delete?')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                            {{-- show --}}
+                            <a href="{{url('product/'.$product->id)}}" class="btn btn-info btn-circle btn-sm">
+                                <i class="fas fa-eye"></i>
                             </a>
                         </td>
                     @endforeach

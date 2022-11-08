@@ -1,4 +1,4 @@
-@extends('layouts.light')
+@extends('layouts.admin')
 
 @section('pagetitle')
     Product
@@ -23,26 +23,6 @@
                 <td>{{ $product->name }}</td>
             </tr>
             <tr class="table-bordered">
-                <th>Barcode</th>
-                <td>{{ $product->barcode }}</td>
-            </tr>
-            <tr class="table-bordered">
-                <th>Brand</th>
-                <td>{{ $product->brand->name }}</td>
-            </tr>
-            <tr class="table-bordered">
-                <th>Supplier</th>
-                <td>{{ $product->supplier->name }}</td>
-            </tr>
-            <tr class="table-bordered">
-                <th>Category</th>
-                <td>{{ $product->category->name }}</td>
-            </tr>
-            <tr class="table-bordered">
-                <th>Subcategory</th>
-                <td>{{ $product->subcategory->name }}</td>
-            </tr>
-            <tr class="table-bordered">
                 <th>Feature</th>
                 <td>{{ $product->feature }}</td>
             </tr>
@@ -51,24 +31,12 @@
                 <td>{{ $product->description }}</td>
             </tr>
             <tr class="table-bordered">
-                <th>Information</th>
-                <td>{{ $product->information }}</td>
-            </tr>
-            <tr class="table-bordered">
                 <th>Regular Price</th>
                 <td>{{ $product->regular_price }}</td>
             </tr>
             <tr class="table-bordered">
                 <th>Price</th>
                 <td>{{ $product->price }}</td>
-            </tr>
-            <tr class="table-bordered">
-                <th>Wholesale Price</th>
-                <td>{{ $product->wholesale_price }}</td>
-            </tr>
-            <tr class="table-bordered">
-                <th>Purchase Price</th>
-                <td>{{ $product->purchase_price }}</td>
             </tr>
             <tr class="table-bordered">
                 <th>Discount</th>
